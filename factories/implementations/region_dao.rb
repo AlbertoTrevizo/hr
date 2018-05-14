@@ -5,14 +5,11 @@ require '/home/alberto/workspace/Ruby/hr/conection/conection.rb'
 class RegionDao < DaoMixin
   include ImplementDao
 
-  attr_accessor :FIELDS, :TABLE, :INSERT, :Q_ALL, :Q_BY_ID
-
-  FIELDS = 'region_id, region_name';
-  TABLE = 'regions';
+  FIELDS = 'region_id, region_name'
+  TABLE = 'regions'
   INSERT = "INSERT INTO #{TABLE} (#{FIELDS}) VALUES "
   Q_ALL = "SELECT #{FIELDS} FROM #{TABLE}"
   Q_BY_ID = "SELECT #{FIELDS} FROM #{TABLE} WHERE region_id ="
-  UPDATE = "UPDATE #{TABLE} SET region_id = ?, region_name = ? WHERE region_id=",
   DELETE = "DELETE FROM #{TABLE} WHERE region_id ="
 
   def create(data)
@@ -24,9 +21,9 @@ class RegionDao < DaoMixin
   def read(data = nil)
     rs = Conection.instance
     if data.nil?
-      result = rs.search(Q_ALL)
+      rs.searchRegion(Q_ALL)
     else
-      result = rs.search("#{Q_BY_ID} #{data}")
+      rs.searchRegion("#{Q_BY_ID} #{data}")
     end
   end
 
