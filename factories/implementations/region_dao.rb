@@ -21,9 +21,9 @@ class RegionDao < DaoMixin
   def read(data = nil)
     rs = Conection.instance
     if data.nil?
-      rs.searchRegion(Q_ALL)
+      rs.search_region(Q_ALL)
     else
-      rs.searchRegion("#{Q_BY_ID} #{data}")
+      rs.search_region("#{Q_BY_ID} #{data}")
     end
   end
 

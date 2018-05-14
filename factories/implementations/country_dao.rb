@@ -5,8 +5,8 @@ require '/home/alberto/workspace/Ruby/hr/conection/conection.rb'
 class CountryDao < DaoMixin
   include ImplementDao
 
-  FIELDS = 'country_id, country_name, region_id';
-  TABLE = 'countries';
+  FIELDS = 'country_id, country_name, region_id'
+  TABLE = 'countries'
   INSERT = "INSERT INTO #{TABLE} (#{FIELDS}) VALUES "
   Q_ALL = "SELECT #{FIELDS} FROM #{TABLE}"
   Q_BY_ID = "SELECT #{FIELDS} FROM #{TABLE} WHERE country_id ="
@@ -21,9 +21,9 @@ class CountryDao < DaoMixin
   def read(data = nil)
     rs = Conection.instance
     if data.nil?
-      rs.searchCountry(Q_ALL)
+      rs.search_country(Q_ALL)
     else
-      rs.searchCountry("#{Q_BY_ID} '#{data}'")
+      rs.search_country("#{Q_BY_ID} '#{data}'")
     end
   end
 

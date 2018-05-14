@@ -1,10 +1,8 @@
 class Location
-  attr_accessor :id, :name
 
   def initialize(id = nil, address = nil, postal_code = nil, city = nil,
           state = nil, country = nil)
     @id = id
-    @name = name
     @address = address
     @postal_code = postal_code
     @city = city
