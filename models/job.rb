@@ -2,7 +2,7 @@ class Job
 
   def initialize(id = nil, title = nil, min_salary = nil, max_salary = nil)
     @id = id
-    @titletitle = title
+    @title = title
     @min_salary = min_salary
     @max_salary = max_salary
   end
@@ -24,19 +24,19 @@ class Job
   end
 
   def get_min_salary
-    @id
+    @min_salary
   end
 
   def set_min_salary(data)
-    @id = data
+    @min_salary = data
   end
 
   def get_max_salary
-    @title
+    @max_salary
   end
 
   def set_max_salary(data)
-    @title = data
+    @max_salary = data
   end
 
 end

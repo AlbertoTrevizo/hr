@@ -38,4 +38,13 @@ class Conection
        row['country_id'] ]
      end
   end
+
+  def search_job criterial
+     rs = @data.exec(criterial)
+     rs.each do |row|
+       puts "%s %s %s %s" % [ row['job_id'], row['job_title'],
+       row['min_salary'], row['max_salary'] ]
+     end
+  end
+
 end
